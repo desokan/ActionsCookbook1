@@ -1,1 +1,1 @@
-# Public Reo - GitHub Actions Cookbook
+# Public Repo - GitHub Actions Cookbook
