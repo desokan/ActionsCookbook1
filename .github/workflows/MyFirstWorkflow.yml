@@ -1,19 +1,35 @@
-# A first workflow to play with
+# GitHub Actions Workflows
+
+# The name of the workflow, used for identification in the GitHub Actions interface.
 name: My First Workflow
+
+# Specifies the events that trigger the workflow.
 on:
+  # Trigger the workflow when code is pushed to the repository.
   push:
-    branches: 
+    branches:
+      # Restrict the trigger to pushes on the 'main' branch.
       - main
+      # Allows manual triggering of the workflow from the GitHub Actions interface.
   workflow_dispatch:
 
+# Defines the jobs to be executed in the workflow.
 jobs:
+  # A unique identifier for the job.
   first_job:
+    # A display name for the job.
     name: My first job
-    runs-on: ubuntu-latest
+    # Specifies the environment where the job will run. Here, it's the
+    runs-on: ubuntu-latest latest Ubuntu version.
+    # Defines a series of tasks (steps) to be executed in the job.
     steps:
+      # A step to execute shell commands.
       - run: |
-            echo "Hello world from ${{ github.actor }}."
-            echo "Current branch is '${{ github.ref }}."
+          echo "Hello world from ${{ github.actor }}."  # Prints a message with the username of the person who triggered the workflow.
+          echo "Current branch is '${{ github.ref }}."  # Prints the current branch name.
+      # A step name for clarity.
       - name: Checkout
-        uses: actions/checkout@v4.2.2
-      - run: tree
+        # Uses the GitHub Actions checkout action to clone the
+        uses: actions/checkout@v4.2.2 repository into the workflow environment.
+        # Executes the `tree` command to display the directory structure of the
+      - run: tree repository.
