@@ -25,8 +25,8 @@ jobs:
     steps:
       # A step to execute shell commands.
       - run: |
-          echo "Hello world from ${{ github.actor }}."  # Prints a message with the username of the person who triggered the workflow.
-          echo "Current branch is '${{ github.ref }}."  # Prints the current branch name.
+          echo "Hello ${{vars.WHO_TO_GREET}} from ${{ github.actor }}."
+          echo "My secret is '${{ secret.MY_SECRET }}."
       # A step name for clarity.
       - name: Checkout
         # Uses the GitHub Actions checkout action to clone the
