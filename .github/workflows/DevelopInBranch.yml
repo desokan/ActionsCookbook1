@@ -1,0 +1,12 @@
+# A first workflow to play around with the editor
+name: Develop in branch
+on: [pull_request, workflow_dispatch]
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Workflow triggered in branch '${{ github.ref }}'."
+          echo "Workflow triggered in branch '${{ github.event_name }}'." 
+          echo "Workflow triggered in branch '${{ github.actor }}'." 
