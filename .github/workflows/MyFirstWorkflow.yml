@@ -20,7 +20,7 @@ jobs:
     # A display name for the job.
     name: My first job
     # Specifies the environment where the job will run. Here, it's the
-    runs-on: ubuntu-latest latest Ubuntu version.
+    runs-on: ubuntu-latest
     # Defines a series of tasks (steps) to be executed in the job.
     steps:
       # A step to execute shell commands.
@@ -32,4 +32,4 @@ jobs:
         # Uses the GitHub Actions checkout action to clone the
         uses: actions/checkout@v4.2.2 repository into the workflow environment.
         # Executes the `tree` command to display the directory structure of the
-      - run: tree repository.
+      - run: tree
