@@ -26,7 +26,7 @@ jobs:
       # A step to execute shell commands.
       - run: |
           echo "Hello ${{vars.WHO_TO_GREET}} from ${{ github.actor }}."
-          echo "My secret is '${{ secret.MY_SECRET }}."
+          echo "My secret is ${{ secrets.MY_SECRET }}."
       # A step name for clarity.
       - name: Checkout
         # Uses the GitHub Actions checkout action to clone the
